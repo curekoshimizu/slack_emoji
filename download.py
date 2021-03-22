@@ -24,10 +24,8 @@ def parse_args() -> argparse.Namespace:
 
 async def main() -> None:
     options = parse_args()
-    print(options)
-    print(await download_emoji(options.dest_dir))
-    # emoji_dict = get_emoji_dict(options.token)
-    # print(emoji_dict)
+    emoji_dict = get_emoji_dict(options.token)
+    print(await download_emoji(options.dest_dir, emoji_dict))
 
 
 if __name__ in "__main__":

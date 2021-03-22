@@ -6,7 +6,7 @@ import aiohttp
 import yaml
 
 
-async def download_emoji(dest_dir: pathlib.Path) -> None:
+async def download_emoji(dest_dir: pathlib.Path, registed_emoji_dict) -> None:
     emoji_dict = get_emoji_dict()
 
     limit = 128
@@ -14,6 +14,10 @@ async def download_emoji(dest_dir: pathlib.Path) -> None:
 
     coros = []
     for name, uri in emoji_dict.items():
+        if name in registed_emoji_dict:
+            print(f"{name} is already registered")
+            continue
+
         target = dest_dir / f"{name}{pathlib.Path(uri).suffix}"
         if not target.parent.exists():
             target.parent.mkdir(parents=True)

@@ -1,0 +1,3 @@
+[submodule "assets/emojipacks"]
+	path = assets/emojipacks
+	url = https://github.com/lambtron/emojipacks.git
