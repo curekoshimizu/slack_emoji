@@ -3,7 +3,7 @@
 import argparse
 import pathlib
 
-from slack_emoji.project_emoji import get_emoji_dict
+from slack_emoji.emoji_dict import get_emoji_dict
 
 
 def parse_args() -> argparse.Namespace:
