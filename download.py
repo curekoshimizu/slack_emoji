@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
 import argparse
+import asyncio
 import pathlib
 
+from slack_emoji.download_emoji import download_emoji
 from slack_emoji.emoji_dict import get_emoji_dict
 
 
@@ -20,11 +22,13 @@ def parse_args() -> argparse.Namespace:
     return args
 
 
-def main() -> None:
+async def main() -> None:
     options = parse_args()
-    emoji_dict = get_emoji_dict(options.token)
-    print(emoji_dict)
+    print(options)
+    print(await download_emoji(options.dest_dir))
+    # emoji_dict = get_emoji_dict(options.token)
+    # print(emoji_dict)
 
 
 if __name__ in "__main__":
-    main()
+    asyncio.run(main())
