@@ -21,6 +21,7 @@ ipdb = "^0.13.4"
 [tool.black]
 line-length = 120
 target-version = ["py38"]
+exclude = '(\.direnv|\.eggs|\.git|\.hg|\.mypy_cache|\.nox|\.tox|\.venv|\.svn|_build|buck-out|build|dist|assets)'
 
 [tool.isort]
 default_section = "THIRDPARTY"
@@ -31,3 +32,4 @@ known_first_party = ["dotfiles"]
 line_length = 120
 multi_line_output = 3
 use_parentheses = true
+skip = "assets"
