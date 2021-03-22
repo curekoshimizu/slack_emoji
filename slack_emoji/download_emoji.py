@@ -6,7 +6,7 @@ import aiohttp
 import yaml
 
 
-async def download_emoji(dest_dir: pathlib.Path, registed_emoji_dict) -> None:
+async def download_emoji(dest_dir: pathlib.Path, registed_emoji_dict: Dict[str, str]) -> None:
     emoji_dict = get_emoji_dict()
 
     limit = 128
